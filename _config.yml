@@ -3,7 +3,7 @@ email: contact@pmacommunications.com
 description: >
   PMA Communications: specialists in producing outstanding event experiences for high level audiences.
 logo: "/assets/images/logo.png"
-baseurl: ""
+baseurl: "/pma-communications"
 url: "https://pmacommunications.com"
 paginate:	5 # The number of posts to show per page on your homepage
 
