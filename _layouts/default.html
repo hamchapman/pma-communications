@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html ⚡ lang="en">
   {% include head.html %}
-  <body>
-    {% include header.html %}
 
-    {{ content }}
+  <body>
+    <div id="all-non-footer-content">
+      {% include header.html %}
+
+      {{ content }}
+    </div>
 
     {% include footer.html %}
   </body>
