@@ -1,50 +1,361 @@
 ---
 layout: default
+header_content: We're specialists in producing outstanding event experiences for high level audiences.
 ---
 
-<main class="content" role="main">
+<style>
 
-  <header class="blog-header">
-      <h1 class="blog-title">{{ site.title }}</h1>
-      <h2 class="blog-description">{{ site.description }}</h2>
-  </header>
+  .quote-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    border-bottom: 3px solid #000;
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+  }
 
-  <div class="cf frame">
-    {% for post in paginator.posts %}
-      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-        <div class="article-item">
-          <header class="post-header">
-            <h2 class="post-title" itemprop="name"><a href="{{ site.baseurl }}{{ post.url }}" itemprop="url">{{ post.title }}</a></h2>
-          </header>
-          <section class="post-excerpt" itemprop="description">
-            <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
-          </section>
-          <div class="post-meta">
-            <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
+  .quote-headline {
+    position: relative;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    padding-left: 35px;
+  }
+
+  .quote-headline::before {
+    content: "\201C";
+    font-family: Georgia, serif;
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+    color: #999;
+    position: absolute;
+    left: 0;
+    top: -5px;
+  }
+
+  .quote-images {
+    height: 250px;
+  }
+
+  .square-images {
+    display: inline-block;
+    float: left;
+  }
+
+  .square-image {
+    display: inline-block;
+    float: left;
+    width: 150px;
+    height: 125px;
+  }
+
+  .main-image {
+    display: inline-block;
+    float: left;
+    width: 283px;
+    height: 250px;
+  }
+
+  .quote-separator {
+    border-bottom: 1px solid #C7C7C7;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  .left-container {
+    display: inline-block;
+    width: 49%;
+    height: 400px;
+    float: left;
+  }
+
+  .right-container {
+    display: inline-block;
+    width: 49%;
+    height: 400px;
+    float: right;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+
+  blockquote {
+    display:block;
+    background: #fff;
+    padding: 15px 20px 15px 45px;
+    margin: 0 0 20px;
+    position: relative;
+
+    font-size: 16px;
+    line-height: 1.2;
+    color: #666;
+    text-align: justify;
+
+    border-left: 15px solid #a23087;
+
+    /* TODO: consider; */
+    -moz-box-shadow: 2px 2px 15px #ccc;
+    -webkit-box-shadow: 2px 2px 15px #ccc;
+    box-shadow: 2px 2px 15px #ccc;
+  }
+
+  blockquote::before {
+    content: "\201C";
+    font-family: Georgia, serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: #999;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+  }
+
+  blockquote::after {
+    content: "";
+  }
+</style>
+
+<div class="content">
+  <div class="quote-row">
+    <div class="quote-title text-left">
+      Understanding audiences
+    </div>
+
+    <div class="left-container">
+      <div class="quote-headline">
+        They instinctively understand audiences…
+      </div>
+
+      <div class="quote-images">
+        <div class="main-image">
+          <amp-img width="283" height="250" layout="responsive" src="/assets/images/understanding-audiences/1.jpg"></amp-img>
+        </div>
+        <div class="square-images">
+          <div class="row-1">
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/understanding-audiences/2.jpg"></amp-img>
+            </div>
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/understanding-audiences/3.jpg"></amp-img>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/understanding-audiences/4.jpg"></amp-img>
+            </div>
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/understanding-audiences/5.jpg"></amp-img>
+            </div>
           </div>
         </div>
-      </article>
-    {% endfor %}
+      </div>
+    </div>
+
+    <div class="right-container">
+      <div class="quote-detail">
+        <blockquote>
+          They simply understand high level audiences. They get how senior people think, how they react, and how they engage. This means they can devise creative solutions that are perfectly targeted to get the right results.
+        </blockquote>
+      </div>
+    </div>
   </div>
+</div>
 
-  <nav class="pagination" role="navigation">
-    {% if paginator.next_page %}
-      <a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.next_page}}">&larr; Older posts</a>
-    {% else %}
-      <a class="newer-posts disabled">&larr; Older posts</a>
-    {% endif %}
-    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    {% if paginator.previous_page %}
-      {% if paginator.page == 2 %}
-        <a class="older-posts" href="{{ site.baseurl }}/">Newer posts &rarr;</a>
-      {% else %}
-        <a class="older-posts" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer posts &rarr;</a>
-      {% endif %}
-    {% else %}
-      <a class="older-posts disabled">Newer posts &rarr;</a>
-    {% endif %}
-  </nav>
+<div class="quote-separator"></div>
 
-</main>
+<div class="content">
+  <div class="quote-row">
+    <div class="quote-title text-right">
+      Memorable experiences
+    </div>
 
-{% include footer.html %}
+    <div class="left-container">
+      <div class="quote-detail">
+        <blockquote>
+          They create experiences that captivate senior audiences - events that people talk about afterwards. It’s exciting to watch an audience change immediately, in real time. You can only create this kind of impact face to face and PMA are simply brilliant at it.
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="right-container">
+      <div class="quote-headline">
+        They create memorable experiences…
+      </div>
+
+      <div class="quote-images">
+        <div class="main-image">
+          <amp-img width="283" height="250" layout="responsive" src="/assets/images/meticulous-execution/1.jpg"></amp-img>
+        </div>
+        <div class="square-images">
+          <div class="row-1">
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/meticulous-execution/2.jpg"></amp-img>
+            </div>
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/meticulous-execution/3.jpg"></amp-img>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/meticulous-execution/4.jpg"></amp-img>
+            </div>
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/meticulous-execution/5.jpg"></amp-img>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="quote-separator"></div>
+
+<div class="content">
+  <div class="quote-row">
+    <div class="quote-title text-left">
+      Meticulous execution
+    </div>
+
+    <div class="left-container">
+      <div class="quote-headline">
+        They always deliver. Perfectly.
+      </div>
+
+      <div class="quote-images">
+        <div class="main-image">
+          <amp-img width="283" height="250" layout="responsive" src="/assets/images/memorable-experiences/1.jpg"></amp-img>
+        </div>
+        <div class="square-images">
+          <div class="row-1">
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/memorable-experiences/2.jpg"></amp-img>
+            </div>
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/memorable-experiences/3.jpg"></amp-img>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/memorable-experiences/4.jpg"></amp-img>
+            </div>
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/memorable-experiences/5.jpg"></amp-img>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-container">
+      <div class="quote-detail">
+        <blockquote>
+          Not only do they create brilliant ideas, they deliver them perfectly. PMA have a hugely experienced delivery team who manage everything to reduce risk and ensure it all works.
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="quote-separator"></div>
+
+<div class="content">
+  <div class="quote-row">
+    <div class="quote-title text-right">
+      Event specialists
+    </div>
+
+    <div class="left-container">
+      <div class="quote-detail">
+        <blockquote>
+          PMA are specialists: they simply focus on creating events and exhibitions for high level audiences. They have all the skills needed to deliver every aspect of a project including creative concepts, design, project management, technical and logistics... everything in one place... Brilliant!
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="right-container">
+      <div class="quote-headline">
+        Genuine experts in executive events.
+      </div>
+
+      <div class="quote-images">
+        <div class="main-image">
+          <amp-img width="283" height="250" layout="responsive" src="/assets/images/extraordinary-individuals/1.jpg"></amp-img>
+        </div>
+        <div class="square-images">
+          <div class="row-1">
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/extraordinary-individuals/2.jpg"></amp-img>
+            </div>
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/extraordinary-individuals/3.jpg"></amp-img>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/extraordinary-individuals/4.jpg"></amp-img>
+            </div>
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/extraordinary-individuals/5.jpg"></amp-img>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="quote-separator"></div>
+
+<div class="content">
+  <div class="quote-row">
+    <div class="quote-title text-left">
+      Extraordinary individuals
+    </div>
+
+    <div class="left-container">
+      <div class="quote-headline">
+        They're an extraordinary bunch of people.
+      </div>
+
+      <div class="quote-images">
+        <div class="main-image">
+          <amp-img width="283" height="250" layout="responsive" src="/assets/images/event-specialists/1.jpg"></amp-img>
+        </div>
+        <div class="square-images">
+          <div class="row-1">
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/event-specialists/2.jpg"></amp-img>
+            </div>
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/event-specialists/3.jpg"></amp-img>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/event-specialists/4.jpg"></amp-img>
+            </div>
+            <div class="square-image">
+              <amp-img width="150" height="125" layout="responsive" src="/assets/images/event-specialists/5.jpg"></amp-img>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-container">
+      <div class="quote-detail">
+        <blockquote>
+          Marketing needs to be extraordinary to be genuinely effective. PMA’s unique history in theatre, TV, and film helps make it extraordinary. We’ve never worked with an agency quite like them. They work as part of our team - you can trust them completely - and they make it easy.
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>

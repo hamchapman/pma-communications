@@ -1,7 +1,13 @@
 @import 'bourbon/bourbon';
-@import 'syntax-highlighting';
 
 $grey-color:       #828282;
+
+.quote-detail {
+  @include vertical-align();
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
 
 .icon {
 
@@ -17,18 +23,14 @@ $grey-color:       #828282;
     }
 }
 
-amp-img {
-  background-color: grey;
-}
-
 .cf {
   @include clearfix;
 }
 
 $rs: 16px;
 
-$font-serif: Georgia,Cambria,"Times New Roman",Times,'Lora', serif;
-$font-sans: "Helvetica Neue", 'Open Sans', Arial, Helvetica, sans-serif;
+$font-serif: Georgia, Cambria, 'Times New Roman', Times, 'Lora', serif;
+$font-sans: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 @mixin respond-to($breakpoint) {
   @media only screen and (max-width: $breakpoint + px) {
@@ -36,9 +38,17 @@ $font-sans: "Helvetica Neue", 'Open Sans', Arial, Helvetica, sans-serif;
   }
 }
 
-// Only needed for syntax highlighting
-%vertical-rhythm {
-  margin-bottom: $rs;
+.team-photos {
+  width: 100%;
+
+  .team-row {
+    width: 100%;
+
+    .team-thumb {
+      width: calc(32.5%);
+      display: inline-block;
+    }
+  }
 }
 
 main {
@@ -61,32 +71,30 @@ body {
 .site-header {
   position: relative;
   width: 100%;
-  max-width: 700px;
-  margin: 16px auto 0 auto;
+  background-color: #009bc9;
   @include box-sizing(border-box);
-  @include respond-to(800) {
-    padding: 0 $rs * 1;
-  }
+
+
+  // TODO
+  // @include respond-to(800) {
+  //   padding: 0 $rs * 1;
+  // }
 
   .page-links {
       display: block;
-      position: absolute;
-      top: 10px;
-      right: $rs;
-      font-weight: 200;
-      font-style: normal;
+      font-weight: 400;
       font-size: 18px;
-      line-height: 30px;
+      margin-top: 10px;
 
       a {
+        margin-right: 24px;
         text-decoration: none;
-        color: #999999;
+        color: #FFFFFF;
         &:hover {
-          color: #333333;
+          color: #E6E6E6;
         }
       }
   }
-
 }
 
 .blog-header {
@@ -119,7 +127,7 @@ body {
 
 .content {
   width: 100%;
-  max-width: 700px;
+  max-width: 1200px;
   margin: 25px auto 0 auto;
   @include box-sizing(border-box);
   @include respond-to(800) {
@@ -482,29 +490,6 @@ body {
     &:hover {
       color: #333333;
     }
-  }
-}
-
-
-pre,
-code {
-  font-size: 15px;
-  border: 1px solid #e8e8e8;
-  border-radius: 3px;
-  background-color: #eeeeff;
-}
-
-code {
-  padding: 1px 5px;
-}
-
-pre {
-  padding: 8px 12px;
-  overflow-x: scroll;
-  > code {
-    border: 0;
-    padding-right: 0;
-    padding-left: 0;
   }
 }
 
