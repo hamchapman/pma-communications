@@ -165,18 +165,12 @@ embedded Twitter posts, etc.
 Google AMP has it's own set of special html tags for including content. You
 should use these instead of normal Markdown or HTML tags.
 
-The two you are are most likely to need are `<amp-img>` and `<amp-youtube>`:
+The two you are are most likely to need are `<amp-img>` and `<amp-iframe>`:
 
 ### Images in your posts
 
 ```
 <amp-img width="600" height="300" layout="responsive" src="/assets/images/your_picture.jpg"></amp-img>
-```
-
-### Youtube Videos in your posts
-
-```
-<amp-youtube data-videoid="lBTCB7yLs8Y" layout="responsive" width="480" height="270"></amp-youtube>
 ```
 
 ### Embedding other types of content
