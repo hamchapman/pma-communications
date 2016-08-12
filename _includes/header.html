@@ -5,7 +5,7 @@
     </div>
 
     <div class="page-links pull-right">
-      <a class="page-link" href="{{ site.baseurl }}/meet-us">Meet us</a>
+      <a class="page-link" href="{{ site.baseurl }}/meet-the-team">Meet the team</a>
       <a class="page-link" href="{{ site.baseurl }}/talk-to-us">Talk to us</a>
     </div>
 
@@ -20,56 +20,19 @@
         {{ page.big_title }}
       </div>
     {% endif %}
+
+    {% if page.job_role %}
+      {% if page.member_name %}
+        <div class="team-headline">
+          <div class="name">
+            {{ page.member_name }}
+          </div>
+
+          <div class="role">
+            {{ page.job_role }}
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
   </div>
 </header>
-
-<style>
-  #intro-header {
-    background-color: #a23087;
-    width: 100%;
-    height: 300px;
-    -webkit-box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.75);
-  }
-
-  .pull-left {
-    float: left;
-  }
-
-  .pull-right {
-    float: right;
-  }
-
-  .big-logo {
-    width: 300px;
-  }
-
-  .content-size-restricted {
-    height: 100%;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    position: relative;
-  }
-
-  .header-text {
-    color: white;
-    font-weight: 300;
-    font-size: 1.7rem;
-    position: absolute;
-    bottom: 25px;
-    left: 30%;
-  }
-
-  .header-title {
-    color: white;
-    font-weight: 700;
-    font-size: 2.5rem;
-    border-bottom: 3px solid #FFF;
-    padding-bottom: 3px;
-    position: absolute;
-    bottom: 25px;
-    right: 30%;
-  }
-</style>
